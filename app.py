@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from database import add_entry, get_entries
+from database import create_table, add_entry, get_entries
 
 menu = """Please select one of the following options:
 1) Add new entry for today.
@@ -12,6 +12,7 @@ welcome = "Welcome to the programming diary!"
 def prompt_new_entry():
     entry_content = input("What have you learned today? ")
     entry_date = input("Enter the date: ")
+
     add_entry(entry_content, entry_date)
 
 def view_entries(entries):
@@ -20,6 +21,7 @@ def view_entries(entries):
 
 
 print(welcome)
+create_table()
 
 while (user_input := input(menu)) != "3": #use walrus operator python3.8 feature
     if user_input == "1":
