@@ -1,0 +1,11 @@
+Avoid SQL Injection Attacks
+
+BEST PRACTICE
+SELECT * FROM users WHERE first_name = ?;, (tuple01)
+
+PYTHON CODE - AVOID
+GET_USER = "SELECT * FROM USERS WHERE first_name = {};"
+cursor.execute(GET_USER.format(username)) 
+
+ATTACKERS may input something like this
+''; DROP TABLE users
